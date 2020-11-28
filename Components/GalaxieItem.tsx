@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, TouchableOpacity, ImageBackground, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Galaxie } from '../Type';
 
@@ -9,7 +9,6 @@ type Props = {
 }
 
 const GalaxieItem: React.FC<Props>  = ({galaxie, navigation}) => {
-    //console.log(galaxie?.date)
     return(
         <View style={styles.container} >
             <TouchableOpacity onPress={() => {
@@ -28,7 +27,6 @@ const GalaxieItem: React.FC<Props>  = ({galaxie, navigation}) => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        //height: 300,
                     }}
                     start={{ x: 0, y: 1 }}
                     end={{ x: 0, y: 0 }}

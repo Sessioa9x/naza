@@ -6,7 +6,6 @@ import GalaxieItem from '../Components/GalaxieItem';
 import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 import { FlatList } from 'react-native-gesture-handler';
 import GalaxieList from '../Components/GalaxieList';
-import { addDays } from 'date-fns/esm';
 
 type Props = {
     navigation: any
@@ -18,7 +17,6 @@ const Home: React.FC<Props>  = ({route, navigation}) => {
     let dateEnd = format(new Date(),"yyyy-MM-dd");
     let date = subDays(new Date(),7);
     let dateStart = format(date,"yyyy-MM-dd");
-    //console.log(date);
 
     const asyncFunction = async () => {
         const res = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=Efs2dOcIFao5dYnZNxNfvBfjMqSCwuLrKh7ri3Py&start_date=${dateStart}&end_date=${dateEnd}`)
@@ -37,8 +35,6 @@ const Home: React.FC<Props>  = ({route, navigation}) => {
         <GalaxieList galaxie={item} navigation={navigation}/>
     );
     
-    //.then(res => setGalaxie(res.data))
-    //console.log(test);
     return(
         <>
             <View style={styles.container}>
@@ -51,8 +47,7 @@ const Home: React.FC<Props>  = ({route, navigation}) => {
                     />
                 </View>
                 <View style={styles.containerBot}>
-                    <GalaxieItem galaxie= {galaxie?galaxie:galaxiesSorted[0]} navigation={navigation}>
-                        
+                    <GalaxieItem galaxie={galaxie?galaxie:galaxiesSorted[0]} navigation={navigation}>
                     </GalaxieItem>
                 </View>
             </View>

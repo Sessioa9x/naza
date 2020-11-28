@@ -7,26 +7,22 @@ type Props = {
     navigation:any
 }
 
-
 const GalaxieList: React.FC<Props>  = ({galaxie,navigation}) => {
-    //console.log(galaxie?.date)
     return(
-        // <>
-            <View style={styles.box} >
-                <TouchableOpacity onPress={() => {
-					navigation.navigate('Home', {
-                        galaxie: galaxie,
-					});
-				}}>
-                    <ImageBackground 
-                        source={{uri : galaxie?.url}}
-                        style={ styles.image} 
-                        imageStyle={{ borderRadius: 15}}
-                    >
-                    </ImageBackground>
-                </TouchableOpacity>
-            </View>
-        //</>
+        <View style={styles.box} >
+            <TouchableOpacity onPress={() => {
+                navigation.navigate('Home', {
+                    galaxie: galaxie,
+                });
+            }}>
+                <ImageBackground 
+                    source={{uri : galaxie?.url}}
+                    style={ styles.image} 
+                    imageStyle={{ borderRadius: 15}}
+                >
+                </ImageBackground>
+            </TouchableOpacity>
+        </View>
     );
 }
 
