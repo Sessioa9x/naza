@@ -51,7 +51,7 @@ const Home: React.FC<Props>  = ({route, navigation}) => {
                     />
                 </View>
                 <View style={styles.containerBot}>
-                    <GalaxieItem galaxie= {galaxie?galaxie:galaxiesSorted[0]}>
+                    <GalaxieItem galaxie= {galaxie?galaxie:galaxiesSorted[0]} navigation={navigation}>
                         
                     </GalaxieItem>
                 </View>
